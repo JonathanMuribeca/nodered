@@ -8,16 +8,31 @@ version: "3.7"
 
 services:
   node-red:
+    user: "node-red:node-red"
     image: nodered/node-red:latest
+    restart: on-failure
+    depends_on:
+      - mongo
     environment:
       - TZ=Etc/UTC
     ports:
       - "1880:1880"
+      - "1883:1883"
     networks:
       - node-red-net
     volumes:
       - node-red-data:/data/node_modules
       - .:/data
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    networks:
+      - node-red-net
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
 
 volumes:
   node-red-data:

@@ -3,36 +3,708 @@
         "id": "f6f2187d.f17ca8",
         "type": "tab",
         "label": "Flow 1",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "234fbbb8126eeb9b",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "279d0ea8.c23d82",
+        "type": "tab",
+        "label": "Flow 3",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "8a22c1bc3db90aa5",
+        "id": "b5dd36236110249f",
         "type": "junction",
         "z": "f6f2187d.f17ca8",
-        "x": 420,
-        "y": 260,
+        "x": 1060,
+        "y": 120,
         "wires": [
             [
-                "8bc6546a7de26fe3",
-                "6544c116b68580bc"
+                "87e4c117f3b016ae",
+                "b881372469592a2c",
+                "995e9c85927f6790"
             ]
         ]
     },
     {
-        "id": "3cc11d24.ff01a2",
-        "type": "comment",
+        "id": "82c488939974b80b",
+        "type": "junction",
+        "z": "234fbbb8126eeb9b",
+        "x": 760,
+        "y": 660,
+        "wires": [
+            [
+                "e476e2e15a5fe3be"
+            ]
+        ]
+    },
+    {
+        "id": "a31c6cbbd83c2c12",
+        "type": "junction",
+        "z": "279d0ea8.c23d82",
+        "x": 680,
+        "y": 440,
+        "wires": [
+            [
+                "a96bf710.e0ecd8"
+            ]
+        ]
+    },
+    {
+        "id": "a4520f106f652bc0",
+        "type": "OPCUA-IIoT-Connector",
+        "discoveryUrl": "",
+        "endpoint": "opc.tcp://10.0.0.20:58400",
+        "keepSessionAlive": true,
+        "loginEnabled": false,
+        "securityPolicy": "None",
+        "securityMode": "None",
+        "name": "LOCAL SERVER",
+        "showErrors": true,
+        "individualCerts": false,
+        "publicCertificateFile": "",
+        "privateKeyFile": "",
+        "defaultSecureTokenLifetime": "",
+        "endpointMustExist": false,
+        "autoSelectRightEndpoint": true,
+        "strategyMaxRetry": "",
+        "strategyInitialDelay": "",
+        "strategyMaxDelay": "",
+        "strategyRandomisationFactor": "",
+        "requestedSessionTimeout": "",
+        "connectionStartDelay": "",
+        "reconnectDelay": "",
+        "maxBadSessionRequests": "10"
+    },
+    {
+        "id": "d0eda73bf1b0dfa9",
+        "type": "ui_group",
+        "name": "Supervisor",
+        "tab": "496b14e304d17274",
+        "order": 1,
+        "disp": true,
+        "width": 20,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "496b14e304d17274",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "77031f86f773e6fe",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e081400e566e5b86",
+        "type": "ui_spacer",
         "z": "f6f2187d.f17ca8",
-        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
-        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
-        "x": 350,
+        "name": "spacer",
+        "group": "d0eda73bf1b0dfa9",
+        "order": 3,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "454150aabfdd341f",
+        "type": "ui_spacer",
+        "z": "f6f2187d.f17ca8",
+        "name": "spacer",
+        "group": "d0eda73bf1b0dfa9",
+        "order": 4,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "73212e185a887527",
+        "type": "ui_spacer",
+        "z": "f6f2187d.f17ca8",
+        "name": "spacer",
+        "group": "d0eda73bf1b0dfa9",
+        "order": 5,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "42ba871593e7626b",
+        "type": "ui_spacer",
+        "z": "f6f2187d.f17ca8",
+        "name": "spacer",
+        "group": "d0eda73bf1b0dfa9",
+        "order": 6,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "5600ef7304f8c5be",
+        "type": "opc-da group",
+        "server": "c7913589f8197dd9",
+        "updaterate": "1000",
+        "deadband": "0",
+        "active": true,
+        "validate": true,
+        "vartable": [
+            {
+                "item": "random"
+            }
+        ],
+        "name": "Arduino"
+    },
+    {
+        "id": "c7913589f8197dd9",
+        "type": "opc-da server",
+        "address": "10.0.0.20",
+        "domain": ".\\",
+        "progid": "",
+        "clsid": "F57384B1-95E2-4591-876C-C608F439FEEA",
+        "verbose": "default",
+        "name": "",
+        "vartable": [],
+        "timeout": "5000"
+    },
+    {
+        "id": "f40656008462d966",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "10.0.0.20",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e21e4642.c12f6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.91",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": 4,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "81751d05d17abb8e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b881372469592a2c",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
         "y": 80,
         "wires": []
     },
     {
-        "id": "9ffa4926584ecf38",
+        "id": "cd29ce09fabdbdf1",
         "type": "inject",
         "z": "f6f2187d.f17ca8",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 160,
+        "wires": [
+            [
+                "cddd12e6e03a1632"
+            ]
+        ]
+    },
+    {
+        "id": "cddd12e6e03a1632",
+        "type": "OPCUA-IIoT-Browser",
+        "z": "f6f2187d.f17ca8",
+        "d": true,
+        "connector": "a4520f106f652bc0",
+        "nodeId": "ns=1;s=ArduinoOPCServer.2Root",
+        "name": "",
+        "justValue": true,
+        "sendNodesToRead": true,
+        "sendNodesToListener": false,
+        "sendNodesToBrowser": false,
+        "multipleOutputs": false,
+        "recursiveBrowse": false,
+        "recursiveDepth": 1,
+        "delayPerMessage": 0.2,
+        "showStatusActivities": false,
+        "showErrors": false,
+        "x": 500,
+        "y": 300,
+        "wires": [
+            [
+                "1c827fc19d398879"
+            ]
+        ]
+    },
+    {
+        "id": "1c827fc19d398879",
+        "type": "OPCUA-IIoT-Read",
+        "z": "f6f2187d.f17ca8",
+        "d": true,
+        "attributeId": "13",
+        "maxAge": 1,
+        "depth": 1,
+        "connector": "a4520f106f652bc0",
+        "name": "",
+        "justValue": true,
+        "showStatusActivities": false,
+        "showErrors": false,
+        "parseStrings": true,
+        "historyDays": 1,
+        "x": 670,
+        "y": 220,
+        "wires": [
+            [
+                "90e52a336ccb5717"
+            ]
+        ]
+    },
+    {
+        "id": "87e4c117f3b016ae",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "d0eda73bf1b0dfa9",
+        "order": 1,
+        "width": 8,
+        "height": 6,
+        "gtype": "donut",
+        "title": "Temperatura Instantânea",
+        "label": "°C",
+        "format": "{{payload}}",
+        "min": "-100",
+        "max": "100",
+        "colors": [
+            "#d62424",
+            "#1be600",
+            "#d62525"
+        ],
+        "seg1": "0",
+        "seg2": "40",
+        "className": "",
+        "x": 1290,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "995e9c85927f6790",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "d0eda73bf1b0dfa9",
+        "order": 2,
+        "width": 12,
+        "height": "8",
+        "label": "Variação de Temperatura",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "-100",
+        "ymax": "100",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1290,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "90e52a336ccb5717",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Temperatura",
+        "func": "let value = msg.payload.value[0].value.value;\nmsg.payload = value;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 220,
+        "wires": [
+            [
+                "b5dd36236110249f"
+            ]
+        ]
+    },
+    {
+        "id": "7be9f9898411d020",
+        "type": "aedes broker",
+        "z": "234fbbb8126eeb9b",
+        "d": true,
+        "name": "local MQTT",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 430,
+        "y": 440,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e476e2e15a5fe3be",
+        "type": "debug",
+        "z": "234fbbb8126eeb9b",
+        "d": true,
+        "name": "msg.payload",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "9a1f241d7def4119",
+        "type": "mqtt in",
+        "z": "234fbbb8126eeb9b",
+        "d": true,
+        "name": "",
+        "topic": "injector_sensor_001",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "f40656008462d966",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 590,
+        "y": 560,
+        "wires": [
+            [
+                "82c488939974b80b"
+            ]
+        ]
+    },
+    {
+        "id": "a17f63b0de9c7539",
+        "type": "mqtt in",
+        "z": "234fbbb8126eeb9b",
+        "d": true,
+        "name": "",
+        "topic": "injector_sensor_002",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "f40656008462d966",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 590,
+        "y": 660,
+        "wires": [
+            [
+                "82c488939974b80b"
+            ]
+        ]
+    },
+    {
+        "id": "0d6bda331188a06a",
+        "type": "mqtt in",
+        "z": "234fbbb8126eeb9b",
+        "d": true,
+        "name": "",
+        "topic": "injector_sensor_003",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f40656008462d966",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 590,
+        "y": 760,
+        "wires": [
+            [
+                "82c488939974b80b"
+            ]
+        ]
+    },
+    {
+        "id": "79c8ceef.7d98f",
+        "type": "aedes broker",
+        "z": "279d0ea8.c23d82",
+        "name": "",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "mongodb://root:example@mongo:27017/mqtt",
+        "usetls": false,
+        "x": 470,
+        "y": 200,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "14eeb3ba.ad54a4",
+        "type": "mqtt out",
+        "z": "279d0ea8.c23d82",
+        "d": true,
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "81751d05d17abb8e",
+        "x": 610,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c95989d3.8f437",
+        "type": "mqtt in",
+        "z": "279d0ea8.c23d82",
+        "name": "",
+        "topic": "injector_sensor_001",
+        "qos": "0",
+        "datatype": "base64",
+        "broker": "f40656008462d966",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 490,
+        "y": 360,
+        "wires": [
+            [
+                "a31c6cbbd83c2c12"
+            ]
+        ]
+    },
+    {
+        "id": "bead8035.50fb98",
+        "type": "inject",
+        "z": "279d0ea8.c23d82",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -47,47 +719,72 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 240,
+        "topic": "injector_sensor_001",
+        "payload": "{\"pressure\":160,\"unit\":\"bar\"}",
+        "payloadType": "json",
+        "x": 430,
         "y": 260,
         "wires": [
             [
-                "8a22c1bc3db90aa5"
+                "14eeb3ba.ad54a4"
             ]
         ]
     },
     {
-        "id": "8bc6546a7de26fe3",
+        "id": "a96bf710.e0ecd8",
         "type": "debug",
-        "z": "f6f2187d.f17ca8",
-        "name": "debug 1",
+        "z": "279d0ea8.c23d82",
+        "name": "",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 520,
-        "y": 220,
+        "x": 830,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "6544c116b68580bc",
-        "type": "debug",
-        "z": "f6f2187d.f17ca8",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 520,
-        "y": 300,
-        "wires": []
+        "id": "14aaf2c5b5aa5be9",
+        "type": "mqtt in",
+        "z": "279d0ea8.c23d82",
+        "name": "",
+        "topic": "injector_sensor_002",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "f40656008462d966",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 490,
+        "y": 440,
+        "wires": [
+            [
+                "a31c6cbbd83c2c12"
+            ]
+        ]
+    },
+    {
+        "id": "45620c5c1ff8dbfb",
+        "type": "mqtt in",
+        "z": "279d0ea8.c23d82",
+        "name": "",
+        "topic": "injector_sensor_003",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "f40656008462d966",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 490,
+        "y": 520,
+        "wires": [
+            [
+                "a31c6cbbd83c2c12"
+            ]
+        ]
     }
 ]
